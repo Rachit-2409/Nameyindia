@@ -1,0 +1,337 @@
+html{
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    word-break: break-all;
+}
+* {
+    font-family: "Heebo", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --main_gradient : linear-gradient(90deg, #FFB100 0%, #FDA900 7%, #EF6C00 70%, #E95400 100%);
+    --heading_color : #FDA900;
+    --body : #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Manrope", sans-serif;
+}
+
+h1 {
+    margin-bottom: 35px;
+    margin: 15px auto;
+    text-align: center;
+    width: 100%;
+    font-size: 96px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #FFB100 0%, #FDA900 7%, #EF6C00 70%, #E95400 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* for some modern browsers */
+}
+
+p,
+li,
+a {
+    font-size: 17px;
+}
+p{
+    margin-bottom: 25px;
+    text-align: left;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+    color: var(--body);
+}
+.CTA_line{
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    color: white;
+    background: var(--heading_color);
+    border-radius: 20px;
+}
+.CTA_line a{
+    color: #fff;
+}
+.uni-padding{
+    padding: 140px 80px;
+}
+.Mini_heading{
+    font-size: 25px;
+    font-weight: 500;
+    color: #E95400;
+    text-align: left;
+}
+.Second_heading{
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+figure{
+    margin: 0;
+}
+.holo-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.holo-image{
+    overflow: hidden;
+    position: relative;
+}
+.holo-image::after{
+    content: ' ';
+    height: 0%;
+    width: 200%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.082);
+    transform: translate(-50%, -50%) rotate(-45deg);    
+    position: absolute;
+    z-index: 1;
+    transition: all linear 0.3s;
+}
+.holo-image:hover::after{
+    height: 300%;
+}
+/*---------------Header-------------------*/
+header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    box-shadow: 0 6px 8px #2d2d2d20;
+    top: 0;
+    background: #fdfdff;
+    z-index: 1000;
+}
+header nav ul {
+    display: flex;
+    gap: 25px;
+}
+header nav ul li{
+    position: relative;
+}
+
+header nav ul li::after {
+    content: ' ';
+    display: inline-block;
+    height: 3px;
+    width: 0%;
+    background-color: var(--heading_color);
+    position: absolute;
+    top: 25px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    transition: all 0.2s linear;
+
+}
+header nav ul li:hover::after {
+    width: 100%;
+}
+
+.menu_block nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+.menu_block{
+    height: 100%;
+    width: 70%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+    background: var(--main_gradient);
+    z-index: 999;
+    top: 30px;
+}
+.menu_block.active_menu{
+    transform: translateX(0);
+}
+#menu_btn{
+    background: var(--main_gradient);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+.menu_block ul li a{
+    font-size: 25px;
+    color: #fff;
+}
+
+@media screen and (max-width:990px) {
+    header nav {
+        display: none;
+    }
+    header a{
+        display: none;
+    }
+    #menu_btn{
+        display: block;
+    }
+    
+}
+
+
+/*----------- HERO ----------*/
+.Hero_Wrapper{
+    background: url(./assests/hero-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+   
+}
+.Hero_Wrapper p{
+    width: 90%;
+    margin: 15px auto;
+    color: #9C9FA6;
+    font-size: 20px ;
+    line-height: 1.5;
+}
+.Hero_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.About_image{
+    padding: 40px 100px 40px 0px ;
+    margin-bottom : 25px;
+}
+.image_inner_about{
+    position: relative;
+}
+.logo_about{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 10px;
+    border-radius: 30px;
+}
+.logo_about img{
+    width: 100%;
+    height: 100%;
+}
+.Service_box{
+    padding: 25px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px  10px rgba(224, 223, 223, 0.651);
+    transition: all linear 0.4s;
+}
+.Service_box:hover{
+    transform: translateY(-7px);
+}
+.Service_box h3{
+    margin-bottom:20px ;
+}
+.Service_box hr{
+    display: inline-block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--heading_color);
+    border: none;
+
+}
+.Service_box img{
+    width: 100%;
+    border-radius: 25px;
+}
+.p_image{
+    margin: 20px 0;
+    height: 90%;
+    width: 90%;
+    border-radius: 25px;
+}
+.Portfolio_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 2px 10px rgba(211, 193, 193, 0.507);
+    padding: 20px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+
+}
+.Portfolio_block button{
+    padding: 8px 25px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background: var(--main_gradient);
+    color: #fff;
+}
+
+@media screen and (max-width : 990px) {
+        .uni-padding{
+            padding: 60px 30px ;
+        }
+        .About_image 
+        {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .image_inner_about{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image_inner_about img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+            width: 90%;
+        }
+        .logo_about{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-size: 70px;
+        }
+}
+@media screen and (max-width : 470px) {
+    .uni-padding{
+        padding: 30px;
+    }
+    
+    h1{
+        font-size: 55px;
+    }
+    .menu_block ul li a{
+        font-size: 18px;
+
+    }
+    
+}
